@@ -1,0 +1,50 @@
+GAS LISTING /tmp/ccYqLJPw.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.section	.text.startup,"ax",@progbits
+   8               	.global	main
+  10               	main:
+  11               	/* prologue: function */
+  12               	/* frame size = 0 */
+  13               	/* stack size = 0 */
+  14               	.L__stack_usage = 0
+  15 0000 509A      		sbi 0xa,0
+  16 0002 519A      		sbi 0xa,1
+  17 0004 529A      		sbi 0xa,2
+  18 0006 539A      		sbi 0xa,3
+  19 0008 549A      		sbi 0xa,4
+  20 000a 559A      		sbi 0xa,5
+  21 000c 569A      		sbi 0xa,6
+  22 000e 2F9A      		sbi 0x5,7
+  23               	.L2:
+  24 0010 1BB8      		out 0xb,__zero_reg__
+  25 0012 2FEF      		ldi r18,lo8(1599999)
+  26 0014 89E6      		ldi r24,hi8(1599999)
+  27 0016 98E1      		ldi r25,hlo8(1599999)
+  28 0018 2150      	1:	subi r18,1
+  29 001a 8040      		sbci r24,0
+  30 001c 9040      		sbci r25,0
+  31 001e 01F4      		brne 1b
+  32 0020 00C0      		rjmp .
+  33 0022 0000      		nop
+  34 0024 00C0      		rjmp .L2
+  36               		.ident	"GCC: (AVR_8_bit_GNU_Toolchain_3.6.1_1752) 5.4.0"
+GAS LISTING /tmp/ccYqLJPw.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccYqLJPw.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccYqLJPw.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccYqLJPw.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccYqLJPw.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccYqLJPw.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccYqLJPw.s:10     .text.startup:0000000000000000 main
+
+NO UNDEFINED SYMBOLS
